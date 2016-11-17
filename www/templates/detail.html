@@ -1,0 +1,51 @@
+<ion-view title="Detail" id="page5">
+  <ion-content padding="true" class="has-header" ng-controller="LineCtrl" >
+    <div id="detail-button-bar4" class="button-bar">
+      <a ui-sref="view" id="detail-button7" style="border-radius:0px 0px 0px 0px;" class="button button-positive  icon-left ion-pie-graph">View</a>
+      <button id="detail-button8" style="border-radius:0px 0px 0px 0px;" class="button button-dark  icon-left ion-android-desktop">Detail</button>
+      <a ui-sref="edit" id="detail-button9" style="border-radius:0px 0px 0px 0px;" class="button button-positive  icon-left ion-edit">Edit</a>
+    </div>
+  <div class="card" ng-controller="Temper">
+        <div class="item item-divider">
+           Front-Sensor
+        </div>
+        <div class="item item-text-wrap">
+           <thermometer-editor set-temp="setTemp" min-temp="0" max-temp="30"></thermometer-editor>  
+           <div class="c100 p25 big">
+          <span>25%</span>
+        <div class="slice">
+        <div class="fill"></div>
+        </div>
+       
+</div>
+    <div class="card">
+        <div class="item item-divider">
+            Front-Sensor chart
+        </div>
+        <div class="item item-text-wrap">
+           <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options" chart-dataset-override="datasetOverride" chart-click="onClick"></canvas> 
+        </div>
+    </div>
+          <div class="card" ng-controller="Temper">
+        <div class="item item-divider">
+           Back-Sensor
+        </div>
+        <div class="item item-text-wrap">
+           <thermometer-editor set-temp="setTemp" min-temp="0" max-temp="30"></thermometer-editor>  
+           <div class="c100 p25 big">
+          <span>25%</span>
+        <div class="slice">
+        <div class="fill"></div>
+        </div>
+       
+</div>
+    <div class="card">
+        <div class="item item-divider">
+            Back-Sensor chart
+        </div>
+        <div class="item item-text-wrap">
+           <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options" chart-dataset-override="datasetOverride" chart-click="onClick"></canvas> 
+        </div>
+    </div>
+  </ion-content>
+</ion-view>
