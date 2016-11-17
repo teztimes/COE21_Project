@@ -1,5 +1,5 @@
 <ion-view title="Detail" id="page5">
-  <ion-content padding="true" class="has-header" ng-controller="LineCtrl" >
+  <ion-content padding="true" class="has-header"  >
     <div id="detail-button-bar4" class="button-bar">
       <a ui-sref="view" id="detail-button7" style="border-radius:0px 0px 0px 0px;" class="button button-positive  icon-left ion-pie-graph">View</a>
       <button id="detail-button8" style="border-radius:0px 0px 0px 0px;" class="button button-dark  icon-left ion-android-desktop">Detail</button>
@@ -18,7 +18,7 @@
         </div>
        
 </div>
-    <div class="card">
+    <div class="card" ng-controller="LineCtrl">
         <div class="item item-divider">
             Front-Sensor chart
         </div>
@@ -30,6 +30,7 @@
         <div class="item item-divider">
            Back-Sensor
         </div>
+        <div class ="card col">
         <div class="item item-text-wrap">
            <thermometer-editor set-temp="setTemp" min-temp="0" max-temp="30"></thermometer-editor>  
            <div class="c100 p25 big">
@@ -37,9 +38,9 @@
         <div class="slice">
         <div class="fill"></div>
         </div>
-       
+       </div>
 </div>
-    <div class="card">
+    <div class="card" ng-controller="LineCtrl2">
         <div class="item item-divider">
             Back-Sensor chart
         </div>

@@ -51,34 +51,128 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives
         }]
     };
 }])
-.controller("LineCtrl", function ($scope) {
+.controller("LineCtrl2", function ($scope) {
 
-  $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
-  $scope.series = ['Series A', 'Series B'];
+  $scope.labels = ["0", "5", "10", "15", "20", "25", "30"];
+  $scope.series = ['Temperature', 'Humidity'];
   $scope.data = [
-    [65, 59, 80, 81, 56, 55, 40],
-    [28, 48, 40, 19, 86, 27, 90]
+    [15, 18, 19, 18, 19, 16, 25],
+    [28, 48, 40, 19, 25, 27, 25]
   ];
   $scope.onClick = function (points, evt) {
     console.log(points, evt);
   };
-  $scope.datasetOverride = [{ yAxisID: 'y-axis-1' }, { yAxisID: 'y-axis-2' }];
+  $scope.datasetOverride = [{ yAxisID: 'Temperature' }, { yAxisID: 'Humidity' }];
   $scope.options = {
     scales: {
+     
       yAxes: [
         {
-          id: 'y-axis-1',
+          id: 'Temperature',
           type: 'linear',
           display: true,
-          position: 'left'
+          position: 'left',
+           ticks: {
+          beginAtZero: true,
+          min: 0,
+          max: 40,
+          stepWidth: 2
+                },
+          scaleLabel: {
+            display: true,
+            labelString: 'Temperature (Celcius)'
+         }
         },
         {
-          id: 'y-axis-2',
+          id: 'Humidity',
           type: 'linear',
           display: true,
-          position: 'right'
+          position: 'right',
+           ticks: {
+          beginAtZero: true,
+          min: 0,
+          max: 100,
+          stepWidth: 2
+                },
+          scaleLabel: {
+            display: true,
+            labelString: 'Humidity (Percent)'
+         }
+          
         }
-      ]
+      ],
+       xAxes: [
+          {
+          type: 'linear',
+          position: 'bottom',
+          scaleLabel: {
+            display: true,
+            labelString: 'Time (minute)'
+          }
+    }]
+    }
+  };
+}).controller("Temper", function ($scope) {
+$scope.actualTemp= 10; 
+$scope.setTemp= 18; 
+}).controller("LineCtrl", function ($scope) {
+
+  $scope.labels = ["5", "10", "15", "20", "25", "30", "35"];
+  $scope.series = ['Temperature', 'Humidity'];
+  $scope.data = [
+    [22, 19, 20, 18, 19, 18, 25],
+    [28, 48, 40, 19, 86, 27, 25]
+  ];
+  $scope.onClick = function (points, evt) {
+    console.log(points, evt);
+  };
+  $scope.datasetOverride = [{ yAxisID: 'Temperature' }, { yAxisID: 'Humidity' }];
+  $scope.options = {
+    scales: {
+       yAxes: [
+        {
+          id: 'Temperature',
+          type: 'linear',
+          display: true,
+          position: 'left',
+           ticks: {
+          beginAtZero: true,
+          min: 0,
+          max: 40,
+          stepWidth: 2
+                },
+          scaleLabel: {
+            display: true,
+            labelString: 'Temperature (Celcius)'
+         }
+        },
+        {
+          id: 'Humidity',
+          type: 'linear',
+          display: true,
+          position: 'right',
+           ticks: {
+          beginAtZero: true,
+          min: 0,
+          max: 100,
+          stepWidth: 2
+                },
+          scaleLabel: {
+            display: true,
+            labelString: 'Humidity (Percent)'
+         },
+       
+        }
+      ],
+       xAxes: [
+          {
+          type: 'linear',
+          position: 'bottom',
+          scaleLabel: {
+            display: true,
+            labelString: 'Time (minute)'
+          }
+    }]
     }
   };
 }).controller("Temper", function ($scope) {
