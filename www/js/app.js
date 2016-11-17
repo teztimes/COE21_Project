@@ -62,7 +62,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives
   $scope.onClick = function (points, evt) {
     console.log(points, evt);
   };
-  $scope.datasetOverride = [{ yAxisID: 'Temperature' }, { yAxisID: 'Humidity' }];
+  $scope.datasetOverride = [{ yAxisID: 'Temperature' }, { yAxisID: 'Humidity' }, { xAxisID: 'x-axe' }];
   $scope.options = {
     scales: {
      
@@ -75,7 +75,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives
            ticks: {
           beginAtZero: true,
           min: 0,
-          max: 40,
+          max: 50,
           stepWidth: 2
                 },
           scaleLabel: {
@@ -101,9 +101,10 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives
           
         }
       ],
-       xAxes: [
+   xAxes: [
           {
-          type: 'linear',
+          id: 'x-axe',
+          display: true,
           position: 'bottom',
           scaleLabel: {
             display: true,
@@ -126,7 +127,7 @@ $scope.setTemp= 18;
   $scope.onClick = function (points, evt) {
     console.log(points, evt);
   };
-  $scope.datasetOverride = [{ yAxisID: 'Temperature' }, { yAxisID: 'Humidity' }];
+  $scope.datasetOverride = [{ yAxisID: 'Temperature' }, { yAxisID: 'Humidity' }, { xAxisID: 'x-axe' }];
   $scope.options = {
     scales: {
        yAxes: [
@@ -138,7 +139,7 @@ $scope.setTemp= 18;
            ticks: {
           beginAtZero: true,
           min: 0,
-          max: 40,
+          max: 50,
           stepWidth: 2
                 },
           scaleLabel: {
@@ -166,7 +167,8 @@ $scope.setTemp= 18;
       ],
        xAxes: [
           {
-          type: 'linear',
+          id: 'x-axe',
+          display: true,
           position: 'bottom',
           scaleLabel: {
             display: true,
