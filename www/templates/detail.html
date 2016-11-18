@@ -9,16 +9,21 @@
         <div class="item item-divider">
            Front-Sensor
         </div>
-        <div class="item item-text-wrap">
-           <thermometer-editor set-temp="setTemp" min-temp="0" max-temp="30"></thermometer-editor>  
-           <div class="c100 p25 big">
+        <div>
+        <div class="item item-text-wrap row">
+       <thermometer-editor set-temp="setTemp" min-temp="0" max-temp="30"></thermometer-editor>  
+            <div >
+              <img src="img/close.png" style="display:initial; width: auto; height: auto; margin-left: auto; margin-right: auto;">
+            </div>
+       <div class="c100 p25 big">
           <span>25%</span>
-        <div class="slice">
-        <div class="fill"></div>
+        <div class="slice ">
+        <div class="fill col"></div>
         </div>
-       
+</div>
 </div>
     <div class="card" ng-controller="LineCtrl">
+
         <div class="item item-divider">
             Front-Sensor chart
         </div>
@@ -27,17 +32,26 @@
         </div>
     </div>
           <div class="card" ng-controller="Temper">
+            
         <div class="item item-divider">
            Back-Sensor
         </div>
-        <div class="item item-text-wrap">
-           <thermometer-editor set-temp="setTemp" min-temp="0" max-temp="30"></thermometer-editor>  
-           <div class="c100 p25 big">
+
+        <div>
+      
+        <div class="item item-text-wrap row">
+       <thermometer-editor set-temp="setTemp" min-temp="0" max-temp="30"></thermometer-editor>  
+            <div >
+              <img src="img/open.png" style="display:initial; width: auto; height: auto; margin-left: auto; margin-right: auto;">
+            </div>
+       <div class="c100 p25 big">
           <span>25%</span>
-        <div class="slice">
-        <div class="fill"></div>
+        <div class="slice ">
+        <div class="fill col"></div>
         </div>
-       
+    </div>    
+       </div>
+       </div>
 </div>
     <div class="card" ng-controller="LineCtrl2">
         <div class="item item-divider">
@@ -46,6 +60,6 @@
         <div class="item item-text-wrap">
            <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options" chart-dataset-override="datasetOverride" chart-click="onClick"></canvas> 
         </div>
-    </div>
+    </div> 
   </ion-content>
 </ion-view>
